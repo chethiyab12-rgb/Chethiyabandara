@@ -279,3 +279,42 @@ footer {
         transform: translateY(0);
     }
 }
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.gradient-text {
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00f2ff, #6a5af9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 12px 24px;
+  background: #1e2a3a;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #2e3a4a;
+  transform: translateY(-3px);
+}
