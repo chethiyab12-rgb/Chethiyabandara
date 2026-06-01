@@ -1,4 +1,4 @@
-// ===== TYPING EFFECT =====
+// Typing effect
 const text = "Find me on";
 let i = 0;
 
@@ -9,27 +9,21 @@ function typing() {
     if (i < text.length) {
         el.innerHTML += text.charAt(i);
         i++;
-        setTimeout(typing, 60);
+        setTimeout(typing, 80);
     }
 }
 typing();
 
-
-// ===== ACCORDION =====
+// Accordion
 document.querySelectorAll(".accordion-btn").forEach(btn => {
     btn.addEventListener("click", function () {
         const panel = this.nextElementSibling;
-
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
+        panel.style.maxHeight =
+            panel.style.maxHeight ? null : panel.scrollHeight + "px";
     });
 });
 
-
-// ===== SCROLL REVEAL (SMOOTH) =====
+// Scroll reveal
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -38,18 +32,4 @@ const observer = new IntersectionObserver(entries => {
     });
 }, { threshold: 0.15 });
 
-document.querySelectorAll(".reveal").forEach(el => {
-    observer.observe(el);
-});
-
-
-// ===== MOUSE PARALLAX (APPLE STYLE) =====
-document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 15;
-    const y = (e.clientY / window.innerHeight - 0.5) * 15;
-
-    const hero = document.querySelector(".hero");
-    if (hero) {
-        hero.style.transform = `translate(${x}px, ${y}px)`;
-    }
-});
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
