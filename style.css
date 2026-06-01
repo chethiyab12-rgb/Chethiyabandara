@@ -1,230 +1,193 @@
-/* RESET */
+/* ======================
+   GLOBAL STYLE
+====================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #0f0f1a, #111827);
+    background: #0f172a;
     color: white;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
-/* NAV */
-nav {
-    position: fixed;
+/* ======================
+   NAVBAR
+====================== */
+
+.navbar {
+    position: sticky;
     top: 0;
-    width: 100%;
-    backdrop-filter: blur(20px);
-    background: rgba(0,0,0,0.35);
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
-    padding: 15px 50px;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-nav .logo {
-    font-weight: bold;
-    font-size: 18px;
-    color: #00e5ff;
-}
-
-nav .menu a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-    position: relative;
-}
-
-nav .menu a:hover {
-    color: #00e5ff;
-}
-
-nav .menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background: #00e5ff;
-    transition: 0.3s;
-}
-
-nav .menu a:hover::after {
-    width: 100%;
-}
-
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+
+    padding: 20px 60px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: cyan;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: cyan;
+    transform: scale(1.1);
+}
+
+/* ======================
+   HERO
+====================== */
+
+.hero {
     text-align: center;
+    padding: 120px 20px;
 }
 
 .hero h1 {
-    font-size: 60px;
-    background: linear-gradient(90deg, #00e5ff, #7c4dff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fadeIn 2s ease-in-out;
+    font-size: 45px;
 }
 
-.hero p {
+.typing {
     margin-top: 10px;
-    opacity: 0.8;
+    color: cyan;
 }
 
-/* GLASS BOX */
+/* ======================
+   SECTIONS
+====================== */
+
+section {
+    padding: 60px 20px;
+}
+
 .glass {
-    margin: 80px auto;
-    width: 80%;
-    padding: 40px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-    transition: 0.3s;
-}
-
-.glass:hover {
-    transform: translateY(-3px);
-}
-
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.06);
-    padding: 20px;
-    margin-top: 15px;
+    margin: 20px auto;
+    width: 85%;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.05);
+    padding: 30px;
+    backdrop-filter: blur(10px);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(0,229,255,0.1);
-    border-color: rgba(0,229,255,0.3);
-}
+/* ======================
+   ACCORDION
+====================== */
 
-/* SKILLS */
-.skill {
+.card {
     margin-top: 15px;
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.accordion-btn {
+    width: 100%;
+    padding: 15px;
+    background: cyan;
+    color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.panel {
+    padding: 10px;
+    display: none;
+}
+
+/* ======================
+   SKILLS
+====================== */
+
+.skill {
+    margin: 15px 0;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
 }
 
 .bar {
     width: 100%;
-    height: 8px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 5px;
+    height: 10px;
+    background: #333;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .bar div {
-    height: 8px;
-    background: linear-gradient(90deg, #00e5ff, #7c4dff);
-    border-radius: 5px;
-    animation: loadBar 2s ease-in-out;
+    height: 10px;
+    background: cyan;
 }
 
-@keyframes loadBar {
-    from { width: 0; }
-}
+/* ======================
+   FOOTER
+====================== */
 
-/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    opacity: 0.6;
+    background: rgba(0,0,0,0.6);
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(-20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
+/* ======================
+   MOBILE RESPONSIVE
+====================== */
 
-/* SCROLL REVEAL */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 1s;
-}
+@media (max-width: 768px) {
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+    /* NAV MOBILE */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
 
-/* =========================
-   🔥 EXPERIENCE ACCORDION
-========================= */
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
 
-.accordion-btn {
-    width: 100%;
-    padding: 16px 18px;
-    text-align: left;
-    background: rgba(255,255,255,0.06);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.08);
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 12px;
-    margin-top: 15px;
-    transition: 0.3s;
-    backdrop-filter: blur(10px);
-}
+    .menu a {
+        font-size: 18px;
+    }
 
-.accordion-btn:hover {
-    background: rgba(0,229,255,0.12);
-    border-color: rgba(0,229,255,0.3);
-    transform: scale(1.01);
-}
+    /* HERO */
+    .hero h1 {
+        font-size: 28px;
+    }
 
-.panel {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-    background: rgba(255,255,255,0.03);
-    border-radius: 0 0 12px 12px;
-    padding: 0 18px;
-}
+    .hero {
+        padding: 80px 15px;
+    }
 
-.panel p {
-    margin: 10px 0;
-    opacity: 0.85;
-}
-
-/* ACTIVE STATE (optional JS class use) */
-.panel.open {
-    padding: 15px 18px;
-}
-
-/* 🔥 QUOTE ANIMATION */
-.quote {
-    max-width: 650px;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-.typing-quote {
-    border-right: 2px solid #00e5ff;
-    white-space: pre-wrap;
-    overflow: hidden;
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
+    /* SECTIONS */
+    .glass {
+        width: 95%;
+        padding: 20px;
+    }
 }
