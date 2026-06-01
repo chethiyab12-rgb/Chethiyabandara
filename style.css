@@ -1,4 +1,3 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -10,31 +9,6 @@ body {
     background: #0b0f1a;
     color: white;
     overflow-x: hidden;
-    animation: fadeBody 1.2s ease-in-out;
-}
-
-/* BACKGROUND ANIMATION */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle, rgba(0,229,255,0.08), transparent 40%),
-                radial-gradient(circle, rgba(124,77,255,0.08), transparent 40%);
-    animation: bgMove 15s linear infinite;
-    z-index: -1;
-}
-
-@keyframes bgMove {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes fadeBody {
-    from { opacity: 0; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
 }
 
 /* NAV */
@@ -59,38 +33,25 @@ nav .menu a {
     margin-left: 20px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-nav .menu a:hover {
-    color: #00e5ff;
-    transform: scale(1.1);
 }
 
 /* HERO */
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.glow {
-    font-size: 60px;
-    background: linear-gradient(90deg, #00e5ff, #7c4dff);
+.gradient-text {
+    font-size: 4rem;
+    background: linear-gradient(90deg, #00f2ff, #6a5af9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: glow 3s infinite alternate;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px rgba(0,229,255,0.2); }
-    to { text-shadow: 0 0 30px rgba(124,77,255,0.6); }
-}
-
-/* GLASS CARD */
+/* GLASS */
 .glass {
     width: 80%;
     margin: 80px auto;
@@ -98,25 +59,20 @@ nav .menu a:hover {
     border-radius: 20px;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(25px);
-    transition: 0.4s;
 }
 
-.glass:hover {
-    transform: translateY(-10px);
-}
-
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.06);
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 15px;
+/* BUTTONS */
+.btn {
+    padding: 12px 20px;
+    background: #1e2a3a;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: scale(1.03);
-    background: rgba(0,229,255,0.1);
+.btn:hover {
+    transform: translateY(-3px);
 }
 
 /* SKILLS */
@@ -140,181 +96,22 @@ nav .menu a:hover {
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.accordion-btn:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0,229,255,0.3);
 }
 
 .panel {
     max-height: 0;
     overflow: hidden;
-    transition: 0.5s ease;
-    padding: 0 15px;
+    transition: 0.5s;
 }
 
 /* REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
-    transition: 1s ease;
+    transition: 1s;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    opacity: 0.6;
-}
-
-.social-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.social-icons a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    font-size: 14px;
-}
-
-.social-icons a:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: rgba(0,229,255,0.15);
-    box-shadow: 0 0 20px rgba(0,229,255,0.3);
-}
-
-.social-icons {
-    margin-top: 25px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: fadeUp 1s ease-in-out;
-}
-
-/* BUTTON STYLE */
-.social-icons a {
-    text-decoration: none;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.4s ease;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* HOVER ANIMATION */
-.social-icons a:hover {
-    transform: translateY(-8px) scale(1.05);
-    background: rgba(0,229,255,0.15);
-    box-shadow: 0 10px 30px rgba(0,229,255,0.3);
-}
-
-/* SHINY LIGHT EFFECT */
-.social-icons a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.2),
-        transparent
-    );
-    transition: 0.5s;
-}
-
-.social-icons a:hover::before {
-    left: 100%;
-}
-
-/* FLOATING ANIMATION */
-.social-icons a {
-    animation: floatIcon 4s ease-in-out infinite;
-}
-
-.social-icons a:nth-child(2) { animation-delay: 0.2s; }
-.social-icons a:nth-child(3) { animation-delay: 0.4s; }
-.social-icons a:nth-child(4) { animation-delay: 0.6s; }
-.social-icons a:nth-child(5) { animation-delay: 0.8s; }
-
-@keyframes floatIcon {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0px); }
-}
-
-/* PAGE LOAD */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.gradient-text {
-  font-size: 4rem;
-  font-weight: bold;
-  background: linear-gradient(90deg, #00f2ff, #6a5af9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-}
-
-.social-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 25px;
-}
-
-.btn {
-  padding: 12px 24px;
-  background: #1e2a3a;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #2e3a4a;
-  transform: translateY(-3px);
 }
