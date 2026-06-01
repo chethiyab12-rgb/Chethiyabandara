@@ -1,0 +1,230 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f1a, #111827);
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #00e5ff;
+}
+
+nav .menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav .menu a:hover {
+    color: #00e5ff;
+}
+
+nav .menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00e5ff;
+    transition: 0.3s;
+}
+
+nav .menu a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg, #00e5ff, #7c4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* GLASS BOX */
+.glass {
+    margin: 80px auto;
+    width: 80%;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.glass:hover {
+    transform: translateY(-3px);
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.06);
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(0,229,255,0.1);
+    border-color: rgba(0,229,255,0.3);
+}
+
+/* SKILLS */
+.skill {
+    margin-top: 15px;
+}
+
+.bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 8px;
+    background: linear-gradient(90deg, #00e5ff, #7c4dff);
+    border-radius: 5px;
+    animation: loadBar 2s ease-in-out;
+}
+
+@keyframes loadBar {
+    from { width: 0; }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   🔥 EXPERIENCE ACCORDION
+========================= */
+
+.accordion-btn {
+    width: 100%;
+    padding: 16px 18px;
+    text-align: left;
+    background: rgba(255,255,255,0.06);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-top: 15px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.accordion-btn:hover {
+    background: rgba(0,229,255,0.12);
+    border-color: rgba(0,229,255,0.3);
+    transform: scale(1.01);
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0 0 12px 12px;
+    padding: 0 18px;
+}
+
+.panel p {
+    margin: 10px 0;
+    opacity: 0.85;
+}
+
+/* ACTIVE STATE (optional JS class use) */
+.panel.open {
+    padding: 15px 18px;
+}
+
+/* 🔥 QUOTE ANIMATION */
+.quote {
+    max-width: 650px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.typing-quote {
+    border-right: 2px solid #00e5ff;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
