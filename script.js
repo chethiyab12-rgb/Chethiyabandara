@@ -105,3 +105,43 @@ document.querySelectorAll("nav a").forEach(link => {
         }
     });
 });
+
+/* SIDEBAR NAV */
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    background: #0f172a; /* dark theme */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar .logo{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.sidebar .menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar .menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar .menu a:hover{
+    background: #1e293b;
+}
