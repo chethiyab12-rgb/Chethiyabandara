@@ -1,5 +1,5 @@
 // ===== TYPING EFFECT =====
-const text = "Find me on";
+const text = "Find me on ";
 let i = 0;
 
 function typing() {
